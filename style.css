@@ -1,0 +1,214 @@
+/* ============================================================
+   NORDBYGG — designtokens
+   Färg:  #1C1F26 kol (mörk bas) · #F5F2EC kalkvit (bakgrund)
+          #E8590C signalorange (accent) · #3B4550 stål (sekundär)
+          #ACA496 betonggrå (dämpad text/ram)
+   Typ:   Oswald (rubrik, versaler, industriell känsla) + Inter (brödtext)
+   Signatur: sågtandsdelare mellan sektioner — refererar till
+             sågtandstak, en klassisk form på industribyggnader.
+   ============================================================ */
+
+:root {
+  --kol: #1C1F26;
+  --kalkvit: #F5F2EC;
+  --orange: #E8590C;
+  --stal: #3B4550;
+  --betong: #ACA496;
+  --text: #232323;
+}
+
+body {
+  background: var(--kalkvit);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+}
+
+h1, h2, h3, h4, .display-font {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--kol);
+}
+
+.text-orange { color: var(--orange) !important; }
+.bg-kol { background-color: var(--kol) !important; }
+.bg-stal { background-color: var(--stal) !important; }
+.bg-orange { background-color: var(--orange) !important; }
+.bg-kalkvit { background-color: var(--kalkvit) !important; }
+
+/* Navbar */
+.navbar-nordbygg {
+  background-color: var(--kol);
+}
+.navbar-nordbygg .navbar-brand {
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: #fff !important;
+}
+.navbar-nordbygg .navbar-brand span { color: var(--orange); }
+.navbar-nordbygg .nav-link {
+  color: #E7E4DD !important;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  margin-left: 0.5rem;
+}
+.navbar-nordbygg .nav-link.active,
+.navbar-nordbygg .nav-link:hover {
+  color: var(--orange) !important;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(180deg, var(--kol) 0%, #262A33 100%);
+  color: #fff;
+  position: relative;
+  padding-top: 6rem;
+  padding-bottom: 8rem;
+}
+.hero h1 {
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+.hero .lead { color: #D6D2C7; }
+.hero-strip {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 10px;
+  background: repeating-linear-gradient(
+    45deg, var(--orange), var(--orange) 14px, #1C1F26 14px, #1C1F26 28px
+  );
+}
+
+/* Sågtandsdelare — signaturelement */
+.sawtooth {
+  height: 42px;
+  width: 100%;
+  background-color: var(--kalkvit);
+}
+.sawtooth-down {
+  clip-path: polygon(0 0, 5% 100%, 10% 0, 15% 100%, 20% 0, 25% 100%, 30% 0, 35% 100%, 40% 0, 45% 100%, 50% 0, 55% 100%, 60% 0, 65% 100%, 70% 0, 75% 100%, 80% 0, 85% 100%, 90% 0, 95% 100%, 100% 0, 100% 100%, 0 100%);
+  background-color: var(--kol);
+}
+.sawtooth-down.on-kalkvit { background-color: var(--kol); }
+.sawtooth.flip {
+  clip-path: polygon(0 100%, 5% 0, 10% 100%, 15% 0, 20% 100%, 25% 0, 30% 100%, 35% 0, 40% 100%, 45% 0, 50% 100%, 55% 0, 60% 100%, 65% 0, 70% 100%, 75% 0, 80% 100%, 85% 0, 90% 100%, 95% 0, 100% 100%, 100% 0, 0 0);
+}
+
+/* Cards */
+.card-nordbygg {
+  border: none;
+  border-radius: 2px;
+  border-top: 4px solid var(--orange);
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(28,31,38,0.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card-nordbygg:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(28,31,38,0.12);
+}
+
+/* Ikonram (SVG-ikoner) */
+.icon-frame {
+  width: 64px; height: 64px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--kol);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.icon-frame svg { width: 32px; height: 32px; }
+
+/* Processteg */
+.step-num {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--orange);
+  line-height: 1;
+}
+
+/* Footer */
+footer.site-footer {
+  background: var(--kol);
+  color: #C8C4BA;
+}
+footer.site-footer a { color: #E7E4DD; text-decoration: none; }
+footer.site-footer a:hover { color: var(--orange); }
+footer.site-footer h5 {
+  color: #fff;
+}
+
+/* Bild-platshållare (illustrationer, ingen extern bild krävs) */
+.illustration-box {
+  background: var(--stal);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.badge-orange {
+  background: var(--orange);
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  padding: 0.35em 0.7em;
+}
+
+.btn-orange {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+}
+.btn-orange:hover {
+  background: #C94E0A;
+  border-color: #C94E0A;
+  color: #fff;
+}
+.btn-outline-kalkvit {
+  border-color: #fff;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+}
+.btn-outline-kalkvit:hover {
+  background: #fff;
+  color: var(--kol);
+}
+
+.section-label {
+  font-family: "Oswald", sans-serif;
+  color: var(--orange);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.avatar-initials {
+  width: 84px; height: 84px;
+  border-radius: 50%;
+  background: var(--stal);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+blockquote.citat {
+  border-left: 4px solid var(--orange);
+  padding-left: 1.2rem;
+  font-style: italic;
+  color: var(--stal);
+}
